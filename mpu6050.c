@@ -193,7 +193,7 @@ void Acc_read(I2C_HandleTypeDef *hi2c,ACC_data *Data)
 {
 
 uint8_t data[6]={0};	
-HAL_I2C_Mem_Read(hi2c,mpu_address_gnd,GYRO_XOUT_H,1,data,6,100);
+HAL_I2C_Mem_Read(hi2c,mpu_address_gnd,ACCEL_XOUT_H,1,data,6,100);
 
 Data->acc_x = (uint16_t)(data[0]<<8)+data[1];
 Data->acc_y = (uint16_t)(data[2]<<8)+data[3];

@@ -165,4 +165,50 @@ return yout;
 }
 
 
+void Gyro_read(I2C_HandleTypeDef *hi2c,GYRO_data *Data)
+	
+{
+
+uint8_t data[6]={0};	
+HAL_I2C_Mem_Read(hi2c,mpu_address_gnd,GYRO_XOUT_H,1,data,6,100);
+
+Data->gyro_x = (uint16_t)(data[0]<<8)+data[1];
+Data->gyro_y = (uint16_t)(data[2]<<8)+data[3];
+Data->gyro_z = (uint16_t)(data[4]<<8)+data[5];
+
+/*
+
+// based on FS  FS=3
+Data->gyro_deg_x = Data->gyro_x /16.4;
+Data->gyro_deg_y = Data->gyro_y /16.4;
+Data->gyro_deg_z = Data->gyro_z /16.4;
+
+
+*/
+
+}
+
+
+void Acc_read(I2C_HandleTypeDef *hi2c,ACC_data *Data)
+{
+
+uint8_t data[6]={0};	
+HAL_I2C_Mem_Read(hi2c,mpu_address_gnd,GYRO_XOUT_H,1,data,6,100);
+
+Data->acc_x = (uint16_t)(data[0]<<8)+data[1];
+Data->acc_y = (uint16_t)(data[2]<<8)+data[3];
+Data->acc_z = (uint16_t)(data[4]<<8)+data[5];
+
+/*
+
+// based on FS  AFS_SEL=3
+Data->acc_deg_x = Data->acc_x /2048;
+Data->acc_deg_y = Data->acc_y /2048;
+Data->acc_deg_z = Data->acc_z /2048;
+
+
+*/
+
+
+}
 

@@ -20,6 +20,34 @@ uint8_t ZA_TEST = 0;
 uint8_t ZG_TEST = 0;
 */
 
+typedef struct 
+ {	
+		
+	uint16_t	gyro_x;
+	uint16_t	gyro_y; 
+  uint16_t	gyro_z;
+	 
+  uint16_t	gyro_deg_x; 	 
+	uint16_t	gyro_deg_y; 
+	uint16_t	gyro_deg_z;
+
+
+ }GYRO_data;
+
+ typedef struct 
+ {	
+		
+	uint16_t	acc_x;
+	uint16_t	acc_y; 
+  uint16_t	acc_z;
+	 
+  uint16_t	acc_deg_x; 	 
+	uint16_t	acc_deg_y; 
+	uint16_t	acc_deg_z;
+
+
+ }ACC_data;
+
 //Sample Rate Divider
 #define SMPLRT_DIV 25
 //uint8_t SMPLRT_DIVIDER = 0;
@@ -209,9 +237,9 @@ uint16_t temp_out(I2C_HandleTypeDef *hi2c);
 uint16_t GYRO_ZOUT(I2C_HandleTypeDef *hi2c);
 uint16_t GYRO_XOUT(I2C_HandleTypeDef *hi2c);
 uint16_t GYRO_YOUT(I2C_HandleTypeDef *hi2c);
-
+void Acc_read(I2C_HandleTypeDef *hi2c,ACC_data *Data);
+void Gyro_read(I2C_HandleTypeDef *hi2c,GYRO_data *Data);
 #endif //_MPU6050_
-
 
 
 

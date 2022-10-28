@@ -25,11 +25,11 @@ typedef struct
 		
 	uint16_t	gyro_x;
 	uint16_t	gyro_y; 
-  uint16_t	gyro_z;
+        uint16_t	gyro_z;
 	 
-  uint16_t	gyro_deg_x; 	 
-	uint16_t	gyro_deg_y; 
-	uint16_t	gyro_deg_z;
+        double	gyro_deg_x; 	 
+	double	gyro_deg_y; 
+	double	gyro_deg_z;
 
 
  }GYRO_data;
@@ -39,11 +39,11 @@ typedef struct
 		
 	uint16_t	acc_x;
 	uint16_t	acc_y; 
-  uint16_t	acc_z;
+        uint16_t	acc_z;
 	 
-  uint16_t	acc_deg_x; 	 
-	uint16_t	acc_deg_y; 
-	uint16_t	acc_deg_z;
+        double	acc_deg_x; 	 
+	double	acc_deg_y; 
+	double	acc_deg_z;
 
 
  }ACC_data;

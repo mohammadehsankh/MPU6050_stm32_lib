@@ -3,8 +3,8 @@
 
 #include "stm32f1xx_hal.h"
 
-#define mpu_address_gnd 0xD0 // if a0 is not connect to vdd
-#define mpu_address_vdd 0xD2 // if a0 is  connect to vdd
+#define mpu_address_gnd 0xD0 //A0 is not connected to vdd
+#define mpu_address_vdd 0xD2 //A0 isconnected to vdd
 
 #define SELF_TEST_X 13
 #define SELF_TEST_Y 14
